@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FootWash : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
         if (other.tag == "dirt")
         {
             other.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic =false;
-        }              
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 }
